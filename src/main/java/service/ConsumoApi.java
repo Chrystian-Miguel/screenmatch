@@ -1,11 +1,13 @@
 package service;
 
+import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@Service
 public class ConsumoApi {
     public String obterDados(String endereco) {
         HttpClient client = HttpClient.newHttpClient();
@@ -16,13 +18,10 @@ public class ConsumoApi {
         try {
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        String json = response.body();
-        return json;
+        return response.body();
     }
 }
