@@ -1,0 +1,6 @@
+com\chrystian\screenmatch\exception\ErroDeConversaoDeJsonException.class
+model\DadosSerie.class
+com\chrystian\screenmatch\ScreenmatchApplication.class
+service\IConverterDados.class
+service\ConsumoApi.class
+service\ConverterDados.class
